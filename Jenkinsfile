@@ -18,4 +18,5 @@ node('slave1') { //optionally add node label: node (‘slave1’)
   if (currentBuild.result == 'FAILURE') {
    addBadge(icon: 'red.gif', text: 'Build Failed')
   } 
+ }
 }
