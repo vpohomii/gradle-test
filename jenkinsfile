@@ -99,8 +99,12 @@ node("slave1") {
         }
 
         stage("Gradle build") {
-	"${grdlHome}/bin/grdl clean install
+	"${grdlHome}/bin/grdl build
         }
+	
+	catch (ex) {
+	echo "Some errors will occure"
+	}
 
         stage("post") {
         def win32BuildBadge = addEmbeddableBadgeConfiguration(id: "win32build", subject: "Windows Build")
