@@ -13,12 +13,13 @@ pipeline {
             }
             stage('build') {
                 steps {
-                sh "gradle build"
+                sh "gradle build clean jar"
                 }
             }
             stage('unit-test') {
                 steps {
                 sh "gradle test"
+                junit "build/test-result/junit-platform/*.xml"
                 }
             }
        
