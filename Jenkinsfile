@@ -36,7 +36,7 @@ pipeline {
                 sh "test-data/int-test.sh build/libs/oto-gradle-1.0.jar otoMato 'just another text!'"    
                 }
         )
-                        }       
+                             
         }    
         post('post') {
                 success {
