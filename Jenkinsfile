@@ -24,16 +24,19 @@ pipeline {
             }
        
             stage('func-test') {
-                steps('step1') {
-                sh "test-data/int-test.sh build/libs/oto-gradle-1.0.jar otoMato 'Hello Otomato!'"
+                steps {
+                    parallel(
+                        "first" : {
+                    sh "test-data/int-test.sh build/libs/oto-gradle-1.0.jar otoMato 'Hello Otomato!'"
                 }
-                steps('step2') {
+                        "second" :  {
                 sh "test-data/int-test.sh build/libs/oto-gradle-1.0.jar otoMato '... ...'"
                 }
-                steps('step3') {
+                        "third" : {
                 sh "test-data/int-test.sh build/libs/oto-gradle-1.0.jar otoMato 'just another text!'"    
                 }
-         }       
+        )
+                        }       
         }    
         post('post') {
                 success {
@@ -45,4 +48,4 @@ pipeline {
         
     }    
  }
-}
+
