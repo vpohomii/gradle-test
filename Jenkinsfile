@@ -19,10 +19,10 @@ pipeline {
         }    
         post('post') {
                 success {
-                   addBadge(icon: completed.gif, text: "Success")
+                   addBadge(icon: "completed.gif", text: "Success")
                 }
                 failure {
-                   addBadge(icon: error.gif, text: "Error")    
+                   addBadge(icon: "error.gif", text: "Error")    
                 }
         
     }    
