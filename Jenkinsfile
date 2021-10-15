@@ -27,12 +27,10 @@ pipeline {
                 sh "test-data/int-test.sh build/libs/oto-gradle-1.0.jar otoMato 'Hello Otomato!'"
                 }
                 steps('step2') {
-                sh "test-data/int-test.sh    
-                build/libs/oto-gradle-1.0.jar otoMato '... ...'"
+                sh "test-data/int-test.sh build/libs/oto-gradle-1.0.jar otoMato '... ...'"
                 }
                 steps('step3') {
-                sh "test-data/int-test.sh    
-                build/libs/oto-gradle-1.0.jar otoMato 'just another text!'"    
+                sh "test-data/int-test.sh build/libs/oto-gradle-1.0.jar otoMato 'just another text!'"    
          }
         }    
         post('post') {
