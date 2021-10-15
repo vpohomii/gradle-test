@@ -28,10 +28,10 @@ pipeline {
                     parallel(
                         "first" : {
                     sh "test-data/int-test.sh build/libs/oto-gradle-1.0.jar otoMato 'Hello Otomato!'"
-                }
+                },
                         "second" :  {
                 sh "test-data/int-test.sh build/libs/oto-gradle-1.0.jar otoMato '... ...'"
-                }
+                },
                         "third" : {
                 sh "test-data/int-test.sh build/libs/oto-gradle-1.0.jar otoMato 'just another text!'"    
                 }
